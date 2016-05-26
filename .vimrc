@@ -32,7 +32,7 @@ colorscheme simple_dark
 set ruler
 set number
 set cursorline
-syntax enable " シンタックスハイライト
+syntax enable
 
 " use shift+%
 set matchpairs+=<:>
