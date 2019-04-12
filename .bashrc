@@ -5,7 +5,7 @@
 # with this software. 
 # If not, see <http://creativecommons.org/publicdomain/zero/1.0/>. 
 
-# base-files version 4.2-3
+# base-files version 4.2-4
 
 # ~/.bashrc: executed by bash(1) for interactive shells.
 
@@ -91,20 +91,17 @@
 # \rm will call the real rm not the alias.
 #
 # Interactive operation...
-#alias rm='rm -i'
-#alias rmy='rm'
-#alias cp='cp -i'
-#alias cpy='cp'
-alias mv='mv -i'
-#alias mvy='mv'
+# alias rm='rm -i'
+# alias cp='cp -i'
+# alias mv='mv -i'
 #
 # Default to human readable figures
-# alias df='df -h'
-# alias du='du -h'
+alias df='df -h'
+alias du='du -h'
 #
 # Misc :)
 alias less='less -r'                          # raw control characters
-# alias whence='type -a'                        # where, of a sort
+alias whence='type -a'                        # where, of a sort
 alias grep='grep --color'                     # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
@@ -112,12 +109,13 @@ alias fgrep='fgrep --color=auto'              # show differences in colour
 # Some shortcuts for different directory listings
 alias ls='ls -hF --color=tty'                 # classify files in colour
 alias dir='ls --color=auto --format=vertical'
-# alias vdir='ls --color=auto --format=long'
+alias vdir='ls --color=auto --format=long'
 alias ll='ls -l'                              # long list
-alias la='ls -A'                              # all but . and ..
+#alias la='ls -A'                              # all but . and ..
+alias la='ls -Al'                              # all but . and ..
 alias l='ls -CF'                              #
-# emulate Mac Open Command
-alias open='cygstart'
+alias diff='diff --color'
+
 # Umask
 #
 # /etc/profile sets 022, removing write perms to group + others.
@@ -199,22 +197,18 @@ alias open='cygstart'
 #   return 0
 # }
 # 
-# alias cd=cd_funC
+# alias cd=cd_func
+
+#add nginx
+PATH="$PATH":/usr/sbin/
+#bash
+export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\[\e[0;31m\]\t\[\e[32m\] \u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
+
+
+# emulate Mac Open Command
+alias open='cygstart'
 
 #for Windows
 alias cmd='open cmd'
-#alias ipconfig='open cmd'
-#alias ifconfig='open cmd'
-#alias traceroute='open cmd'
-#alias tracert='open cmd'
-#alias dig='open cmd'
-#alias nslookup='open cmd'
-
-#UserVariables
-#io
-export PATH=/home/USERNAME/io/build/_build/dll/:$PATH
-export PATH=/usr/local/lib/:$PATH
-export PATH=/usr/local/bin/:$PATH
-export PATH=/usr/sbin/:$PATH
-#bash
-export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\[\e[0;31m\]\t\[\e[32m\] \u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
+alias ipconfig='open cmd'
+alias nslookup='open cmd'
